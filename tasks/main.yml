@@ -1,3 +1,13 @@
+#waiting for ansible 2.0
+#- name: Create DNS zones for site
+#  route53_zone: >
+#    zone="{{ item.0.zone }}"
+#    state="{{ item.0.state }}"
+#    comment="{{ item.0.comment }}"
+#  with_dict: dns
+#  with_subelements:
+#    - dns
+
 # Loop through the dns object variable (see README.md)
 - name: Create DNS entries for site
   route53: >
