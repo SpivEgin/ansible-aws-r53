@@ -1,0 +1,14 @@
+# Loop through the dns object variable (see README.md)
+- name: Create DNS entries for site
+  route53: >
+    command=create 
+    zone="{{ item.0.zone }}"
+    record="{{ item.1.record }}"
+    type="{{ item.1.type }}"
+    ttl="{{ item.1.ttl }}"
+    value="{{ item.1.value }}"
+    overwrite=yes
+  with_dict: dns
+  with_subelements:
+    - dns
+    - entries
