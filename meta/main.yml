@@ -6,12 +6,19 @@ galaxy_info:
   license: MIT
   min_ansible_version: 1.9
   platforms:
-  - name: EL
+  - name: Ubuntu
     versions:
     - all
+  - name: CentOS
+    versions:
+    - all
+
   galaxy_tags:
     - directlyops
     - aws
     - r53
     - route 53
     - ec2
+    - cloud
+    - dns
+
