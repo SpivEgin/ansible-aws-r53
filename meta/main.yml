@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Duncan Bowring
+  description: Quick and easy acme web installer.
+  company: DirectlyOps LLC
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+  - name: EL
+    versions:
+    - all
+  galaxy_tags:
+    - directlyops
+    - aws
+    - r53
+    - route 53
+    - ec2
