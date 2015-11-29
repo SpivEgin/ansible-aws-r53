@@ -22,7 +22,7 @@ script:
   - 'ansible-playbook -i tests/hosts tests/test-prep.yml --syntax-check'
 
   # Run the prep script
-  - 'ansible-playbook -i tests/hosts tests/test-prep.yml'
+  - 'ansible-playbook -i tests/hosts tests/test-prep.yml --connection=local --sudo'
 
   # Check the role/playbook's syntax.
   - 'ansible-playbook -i tests/hosts tests/test.yml --syntax-check'
