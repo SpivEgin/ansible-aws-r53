@@ -1,0 +1,13 @@
+dns:
+  - zone: testing.com
+    state: present
+    comment: "testing comment"
+    entries:
+      - record: test.com
+        type: A
+        ttl: 500
+        value: 1.2.3.4
+      - record: test.com
+        type: NS
+        ttl: 172800
+        value: "ns-748.awsdns-29.net.,ns-1309.awsdns-35.org.,ns-1575.awsdns-04.co.uk.,ns-407.awsdns-50.com."

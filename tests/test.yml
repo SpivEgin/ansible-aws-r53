@@ -8,5 +8,6 @@
     - apt: name=git
 
   roles:
-    - ansible-aws-r53
+    - { role: ansible-aws-r53, "vars_file": "r53z_testing_com.yml" }
+
 
