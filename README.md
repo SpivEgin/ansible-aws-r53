@@ -1,6 +1,7 @@
 # ansible-aws-r53
 
-travis badge
+[![Build
+Status](https://travis-ci.org/bdgscotland/ansible-aws-r53.svg?branch=master)](https://travis-ci.org/bdgscotland/ansible-aws-r53)
 
 ## Description 
 
