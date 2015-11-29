@@ -6,6 +6,7 @@
     - apt: update_cache=yes
     - apt: name=python-pip
     - apt: name=git
+    - pip: name=boto
 
   roles:
     - { role: ansible-aws-r53, "vars_file": "r53z_testing_com.yml" }
