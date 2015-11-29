@@ -14,6 +14,20 @@ This role manages records within zones in Amazon AWS Route53.
 
 ## Playbook and Variable Directory Structure
 
+Recommended directory structure
+```tree
+.
++-- playbook.yml
++-- host_vars
+|   +-- aws
+|   +-- global_constants.yml
+|   |   +-- us
+|   |   |   +-- regional_constants.yml
+|   |   |   +-- r53
+|   |   |   |   +-- service_constants.yml
+|   |   |   |   +-- r53z_testing_com.yml
+
+
 ## Usage
 
 Include this role in your plays, it is recommended that you use a similar directory structure for zone splitting.
@@ -39,9 +53,15 @@ I recommend that you add a localhost and local entry to your hosts file. AWS rol
     
 ## Limitations
 
-Unfortunately, Ansible < 2.0 does not yet support creation/deletion of the zones. It will error out if you do not create the zones first.
-It will also error out if the zones were created and maintained outside of the Ansible role. They will need to be created by this role to continue to successfully be maintained by this role.
-At the moment, it does not dynamically read the contents of the r53 directories. This is intentional but may change.
+- Unfortunately, Ansible < 2.0 does not yet support creation/deletion of the zones.
+- It will error out if you do not create the zones first.
+- It will also error out if the zones were created and maintained outside of the Ansible role. They will need to be created by this role to continue to successfully be maintained by this role.
+- At the moment, it does not dynamically read the contents of the r53 directories. This is intentional but may change.
+- Does not yet support ALIAS records (Ansible 1.9)
+- Does not yet support private zones (within RFC1918 space in VPC) (Ansible 1.9)
+- Does not yet support regional differences (Ansible 2.0)
+- Does not support any operations around health checks
+- Does not support any operations around dynamic facts for Route 53 (Ansible 2.0)
 
 ## Tests
 This role includes Travis CI tests.
