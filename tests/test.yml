@@ -8,6 +8,10 @@
     - apt: name=git
     - pip: name=boto
 
+  vars:
+    aws_secrets_access_key: "123"
+    aws_secrets_secret_key: "abc"
+
   roles:
     - { role: ansible-aws-r53, "vars_file": "r53z_testing_com.yml" }
 
