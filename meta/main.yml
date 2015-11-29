@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Duncan Bowring
-  description: Quick and easy acme web installer.
+  description: This role manages Amazon AWS Route53 DNS service.
   company: DirectlyOps LLC
   license: MIT
   min_ansible_version: 1.9
