@@ -12,10 +12,15 @@
 - name: Load in dns specific vars
   include_vars: "{{ vars_file }}"
 
+#    alias="{{ item.1.alias | default(none) }}"
+#    alias_hosted_zone_id="{{ item.1.aliashostedzoneid | default(none) }}"
+
 # Loop through the dns object variable (see README.md)
 - name: Create DNS entries for site
   route53: >
     command=create 
+    aws_access_key="{{ aws_secrets_access_key | default(none) }}"
+    aws_secret_key="{{ aws_secrets_secret_key | default(none) }}"
     zone="{{ item.0.zone }}"
     record="{{ item.1.record }}"
     type="{{ item.1.type }}"

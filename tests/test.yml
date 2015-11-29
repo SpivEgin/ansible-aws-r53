@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: yes
+
+  pre_tasks:
+    - apt: update_cache=yes
+    - apt: name=python-pip
+    - apt: name=git
+
+  roles:
+    - ansible-aws-r53
+
