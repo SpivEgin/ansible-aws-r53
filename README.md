@@ -7,8 +7,6 @@ Status](https://travis-ci.org/bdgscotland/ansible-aws-r53.svg?branch=master)](ht
 
 This role manages records within zones in Amazon AWS Route53.
 
-## Provides
-
 ## Requires
 Ansible 1.9 or greater.
 
