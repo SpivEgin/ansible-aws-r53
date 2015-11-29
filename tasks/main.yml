@@ -8,6 +8,10 @@
 #  with_subelements:
 #    - dns
 
+---
+- name: Load in dns specific vars
+  include_vars: "{{ vars_file }}"
+
 # Loop through the dns object variable (see README.md)
 - name: Create DNS entries for site
   route53: >

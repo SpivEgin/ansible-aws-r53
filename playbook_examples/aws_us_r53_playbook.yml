@@ -1,0 +1,12 @@
+- name: Manage AWS Route53
+  hosts: localhost
+
+  vars_files: 
+    - "host_vars/aws/global_constants.yml" # use this for anything that you need cross region
+    - "host_vars/aws/us/regional_constants.yml" # local region constants - i.e. if you need to specify a region
+    - "host_vars/aws/us/secrets.yml" # should be encrypted in vault - AWS secrets can go here or boto conf
+
+  connection: local
+  roles:
+    - { role: ansible-aws-r53, "vars_file": "host_vars/aws/us/r53/r53z_test_com.yml" }
+

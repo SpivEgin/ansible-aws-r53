@@ -1,0 +1,14 @@
+dns:
+  - zone: second.test.com
+    state: present
+    comment: "testing comment"
+    entries:
+      - record: second.test.com
+        type: MX
+        ttl: 3600
+        value: "1 ASPMX.L.GOOGLE.COM,5 ALT1.ASPMX.L.GOOGLE.COM,5 ALT2.ASPMX.L.GOOGLE.COM,10 ASPMX2.GOOGLEMAIL.COM,10 ASPMX3.GOOGLEMAIL.COM"
+      - record: second.test.com
+        type: NS
+        ttl: 172800
+        value: "ns-1347.awsdns-40.org.,ns-1743.awsdns-25.co.uk.,ns-611.awsdns-12.net.,ns-450.awsdns-56.com."
+
