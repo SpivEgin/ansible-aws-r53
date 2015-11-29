@@ -9,6 +9,7 @@ This role manages records within zones in Amazon AWS Route53.
 ## Provides
 
 ## Requires
+Ansible 1.9 or greater.
 
 ## Variables
 
@@ -53,14 +54,18 @@ I recommend that you add a localhost and local entry to your hosts file. AWS rol
     
 ## Limitations
 
-- Unfortunately, Ansible < 2.0 does not yet support creation/deletion of the zones.
-- It will error out if you do not create the zones first.
-- It will also error out if the zones were created and maintained outside of the Ansible role. They will need to be created by this role to continue to successfully be maintained by this role.
-- At the moment, it does not dynamically read the contents of the r53 directories. This is intentional but may change.
-- Does not yet support ALIAS records (Ansible 1.9)
+### Zones
+- Does not yet support the creation/manipulation of zones (Ansible 2.0) (it will error out if you do not create the zone first).
+- It will error out if the zone already exists with records, they need to be created by this role to continue to successfully be maintained by this role.
 - Does not yet support private zones (within RFC1918 space in VPC) (Ansible 1.9)
 - Does not yet support regional differences (Ansible 2.0)
-- Does not support any operations around health checks
+ 
+### Healthchecks
+- Does not yet support any operations around health checks.
+
+### Records
+- At the moment, it does not dynamically read the contents of the r53 directories. This is intentional but may change.
+- Does not yet support ALIAS records (Ansible 1.9)
 - Does not support any operations around dynamic facts for Route 53 (Ansible 2.0)
 
 ## Tests
