@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: yes
+
+  tasks:
+    - apt: update_cache=yes
+    - apt: name=python-pip
+    - apt: name=git
+    - pip: name=boto
+
+  vars:
+    aws_secrets_access_key: "123"
+    aws_secrets_secret_key: "abc"

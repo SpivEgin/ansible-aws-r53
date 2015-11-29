@@ -18,6 +18,12 @@ install:
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
 script:
+  # Run the prep script - syntax
+  - 'ansible-playbook -i tests/hosts tests/test-prep.yml --syntax-check'
+
+  # Run the prep script
+  - 'ansible-playbook -i tests/hosts tests/test-prep.yml'
+
   # Check the role/playbook's syntax.
   - 'ansible-playbook -i tests/hosts tests/test.yml --syntax-check'
 
