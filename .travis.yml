@@ -22,11 +22,11 @@ script:
   - 'ansible-playbook -i tests/hosts tests/test.yml --syntax-check'
 
   # Run the role/playbook with ansible-playbook.
-  - 'ansible-playbook -vvvv -i tests/hosts tests/test.yml --connection=local --sudo'
+  - 'ansible-playbook --check -vvvv -i tests/hosts tests/test.yml --connection=local --sudo'
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   - >
-    ansible-playbook -i tests/hosts tests/test.yml --connection=local --sudo --diff
+    ansible-playbook --check -i tests/hosts tests/test.yml --connection=local --sudo --diff
     | tee /dev/tty
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
