@@ -15,7 +15,7 @@ This role manages records within zones in Amazon AWS Route53.
 ## Playbook and Variable Directory Structure
 
 Recommended directory structure
-```tree
+```
 .
 +-- playbook.yml
 +-- host_vars
@@ -26,7 +26,7 @@ Recommended directory structure
 |   |   |   +-- r53
 |   |   |   |   +-- service_constants.yml
 |   |   |   |   +-- r53z_testing_com.yml
-
+```
 
 ## Usage
 
